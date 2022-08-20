@@ -22,6 +22,3 @@ def branch():
     os.system('git branch')
     print('branch done')
 
-push()
-
-# something

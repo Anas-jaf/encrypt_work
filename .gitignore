@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # my files and folders
-# /test
+/test/*

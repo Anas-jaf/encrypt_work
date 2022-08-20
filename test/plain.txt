@@ -1,2 +1,0 @@
-this massage will be encrypted with key 
-هذا النص سوف يتم تشفيره بكلمة المرور

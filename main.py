@@ -11,6 +11,7 @@ import pushPull
 # TODO: make this code better later 
 # TODO: add work_folder to .gitignore file 
 # TODO: move to the next task
+# TODO: add rsync python support to the script 
 
 
 if __name__ == "__main__":
@@ -25,8 +26,8 @@ if __name__ == "__main__":
     
     if args.passphrase is None:
         args.passphrase = input("enter password: ")
-    psswd = bytes(args.passphrase , 'utf-8')
-    path= args.path
+        psswd = bytes(args.passphrase , 'utf-8')
+        path= args.path
 
     '''
     check if there is path and if there is path enter in loop and encrypt or decrypt the files 

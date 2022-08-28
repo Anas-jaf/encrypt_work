@@ -5,7 +5,7 @@ now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y-%H:%M:%S")
 
 def push():
-    os.system('git add .')
+    os.system('git add -f work_folder')
     os.system(f"git commit -m {dt_string}")
     os.system('git push')
     print('push done')

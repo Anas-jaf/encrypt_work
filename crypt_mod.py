@@ -20,9 +20,9 @@ def encrypt (passphrase:bytes, file_name:str):
     with open(file_name, 'rb') as file:
         plaintext = file.read()  # binary read
     now = datetime.now()
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")  
-    massage= f"\nencrypted at {dt_string}"
-    plaintext += bytes(massage,'utf-8')
+    # dt_string = now.strftime("%d/%m/%Y %H:%M:%S")  
+    # massage= f"\nencrypted at {dt_string}"
+    # plaintext += bytes(massage,'utf-8')
     return f.encrypt(plaintext)
     
 
@@ -40,9 +40,12 @@ def decrypt(passphrase:bytes, file_name:str):
         encrypted = file.read()  # binary read
     # breakpoint()
     plaintext = f.decrypt(encrypted)  # binary output
-    encoded = plaintext.decode()
-    # print('real value',encoded)
-    return bytes(encoded,'utf-8')  
+    try :
+        encoded = plaintext.decode('utf-8')
+        return bytes(encoded,'utf-8')
+    except:          
+        encoded = plaintext.decode('latin-1')
+        return bytes(encoded,'latin-1')  
 
 def dir(path=f'{os.getcwd()}/work_folder'):
     '''
